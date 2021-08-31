@@ -6,7 +6,7 @@
 ## 安装及使用
 ### 安装
 ```
-npm i anchor-scroll --save
+npm i scroll-anchor --save
 ```
 ### 使用
 - Dom结构
