@@ -1,7 +1,7 @@
 {
-  "name": "anchor-scroll",
+  "name": "scroll-anchor",
   "version": "1.0.0",
-  "description": "anchor-scroll",
+  "description": "scroll-anchor",
   "main": "/dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
