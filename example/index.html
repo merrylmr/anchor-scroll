@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>anchor-scroll</title>
+    <style>
+        .section {
+            height: 100vh;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .anchor-list {
+            position: fixed;
+            width: 100px;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        .anchor-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .anchor-item.is-active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="sections">
+        <div class="section">1</div>
+        <div class="section">2</div>
+        <div class="section">3</div>
+        <div class="section">4</div>
+    </div>
+    <div class="anchor-list">
+        <div class="anchor-item">1</div>
+        <div class="anchor-item">2</div>
+        <div class="anchor-item">3</div>
+        <div class="anchor-item">4</div>
+    </div>
+</div>
+
+<script src="../dist/index.js"></script>
+<script>
+    window.addEventListener('load', function () {
+        new ScrollAnchor({
+            section: 'section',
+            anchor: 'anchor-item',
+            paddingTop: 50,
+            lastActive: true,
+            speed: 3000,
+        })
+    })
+</script>
+</body>
+</html>
