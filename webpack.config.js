@@ -47,7 +47,6 @@ module.exports = {
                         // TODO: 未生效
                         drop_console: true,
                         drop_debugger: false,
-                        pure_funcs: ['console.log'] // 移除console
                     },
                     output: {
                         beautify: false, //最紧凑的输出，不保留空格和制表符
