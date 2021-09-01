@@ -153,6 +153,7 @@ export default class ScrollAnchor {
             })
         }, 200)
         const parentDom = this.scrollContainer
+        scrollHandle();
         parentDom.addEventListener('scroll', scrollHandle)
 
         this.$on('removeEvent', () => {
