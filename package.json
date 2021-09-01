@@ -1,6 +1,6 @@
 {
   "name": "scroll-anchor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "scroll-anchor",
   "main": "/dist/index.js",
   "scripts": {
