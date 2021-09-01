@@ -113,7 +113,6 @@ export default class ScrollAnchor {
         const diffY = options.paddingTop;
 
         const scrollHandle = throttle(() => {
-            console.log('scrollHandle')
             const scrollTop = this.getScrollTop(this.scrollDom);
             const index = this.offsetTopArr.findIndex((item => {
                 return item > scrollTop + diffY

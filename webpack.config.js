@@ -1,3 +1,4 @@
+const TerserPlugin = require("terser-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 module.exports = {
     entry: {
@@ -37,7 +38,29 @@ module.exports = {
             }
         ]
     },
-    plugins: [new CleanWebpackPlugin({})],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {
+                        // TODO: 未生效
+                        drop_console: true,
+                        drop_debugger: false,
+                        pure_funcs: ['console.log'] // 移除console
+                    },
+                    output: {
+                        beautify: false, //最紧凑的输出，不保留空格和制表符
+                        comments: false, //删除所有注释
+                    }
+                },
+                extractComments: false
+            })
+        ],
+    },
+    plugins: [
+        new CleanWebpackPlugin({}),
+    ],
     watchOptions: {
         ignored: /node_modules/,
     },
