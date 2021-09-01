@@ -4,7 +4,7 @@ const domScrollTop = document.documentElement.scrollTop || window.pageYOffset ||
 const defaultOptions = {
     paddingTop: 0,
     lastActive: false,
-    speed: 1000
+    duration: 1000
 }
 export default class ScrollAnchor {
     constructor(options) {
@@ -77,7 +77,7 @@ export default class ScrollAnchor {
         const scrollTopDom = this.scrollDom
         let scrollTop = this.getScrollTop(scrollTopDom)
         let startTime = Date.now(); // 开始时间
-        const duringTime = 1000;
+        const duringTime = this.options.duration;
 
         const step = (startPos, endPos) => {
             const leftTime = (startTime + duringTime) - Date.now();
