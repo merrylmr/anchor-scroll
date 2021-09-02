@@ -1,6 +1,7 @@
 const TerserPlugin = require("terser-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 module.exports = {
+    target: ['web', 'es5'],
     entry: {
         index: ['/src/index.js']
     },
@@ -43,12 +44,14 @@ module.exports = {
         minimizer: [
             new TerserPlugin({
                 terserOptions: {
+                    ecma: 5,
                     compress: {
                         // TODO: 未生效
                         drop_console: true,
                         drop_debugger: false,
                     },
                     output: {
+                        ecma: 5,
                         beautify: false, //最紧凑的输出，不保留空格和制表符
                         comments: false, //删除所有注释
                     }
