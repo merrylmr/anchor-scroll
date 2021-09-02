@@ -1,7 +1,7 @@
 ## 介绍
 实现点击一个锚点（导航），跳转到对应的区块；容器滚动时，对应的锚点高亮；
-类似如下效果：
-
+项目演示地址
+http://admin-vuetify.bysir.top:1080/#/anchorScroll
 
 ## 安装及使用
 ### 安装
@@ -26,27 +26,34 @@ npm i scroll-anchor --save
     </div>
 </div>
 ```
-- 初始化
+- 引用
+1. 通过`import`方式
 ```
+ import ScrollAnchor from 'scroll-anchor'
+```
+2. 通过`CDN`方式
+```
+<script src="https://unpkg.com/scroll-anchor@1.0.4/dist/index.js"></script>
+```
+- 使用
+```
+ 
    new ScrollAnchor({
         section: 'section',
         anchor: 'anchor-item',
         paddingTop: 50,
         lastActive: true,
-        speed: 3000,
+        duration: 3000,
       })
 ```
 ### 配置项
-```
-{
-        section: 'section',  // 跳转的板块类名，必填
-        anchor: 'anchor-item', // 锚点类名；必填
-        paddingTop: 50, // 距离容器多少 下一个高亮；默认：0
-        lastActive: true, // 最后一个是否高亮；默认：false
-        speed: 3000, //  速度（ms）默认：1000(ms）
-        scrollContainer: 'scrollContainer' // 板块的容器，默认：window
-}
-```
+- section: 'section',  // 跳转的板块类名，必填
+- anchor: 'anchor-item', // 锚点类名；必填
+  - paddingTop: 50, // 距离容器多少 下一个高亮；默认：0
+  - lastActive: true, // 最后一个是否高亮；默认：false
+- duration: 3000, //  速度（ms）默认：1000(ms）
+- scrollContainer: 'scrollContainer' // 板块的容器，默认：window
+
 **注意：**
 单页面（vue项目中），在组件销毁的情况下，需要调用实例的滚动事件移除
 ```
@@ -54,5 +61,3 @@ npm i scroll-anchor --save
         instance.$emit('removeEvent')  // 移除滚动事件
       })
 ```
-##  项目演示地址
-http://admin-vuetify.bysir.top:1080/#/anchorScroll
