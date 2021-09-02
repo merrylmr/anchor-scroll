@@ -49,8 +49,8 @@ npm i scroll-anchor --save
 ### 配置项
 - section: 'section',  // 跳转的板块类名，必填
 - anchor: 'anchor-item', // 锚点类名；必填
-  - paddingTop: 50, // 距离容器多少 下一个高亮；默认：0
-  - lastActive: true, // 最后一个是否高亮；默认：false
+- paddingTop: 50, // 距离容器多少 下一个高亮；默认：0
+- lastActive: true, // 最后一个是否高亮；默认：false
 - duration: 3000, //  速度（ms）默认：1000(ms）
 - scrollContainer: 'scrollContainer' // 板块的容器，默认：window
 
